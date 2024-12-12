@@ -1,2 +1,2 @@
-# eJPT
-I miei appunti
+Passive Information Gathering
+Active Information Gathering
