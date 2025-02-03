@@ -41,6 +41,14 @@ Assessment Methodologies: Vulnerability Assessment
 
 -[Vulnerability Scanning](https://github.com/emanueletroiani/eJPT/tree/Vulnerability-Scanning)
 
+Assessment Methodologies: Auditing Fundamentals
+
+-Introduction to Security Auditing
+
+-Governance, Risk & Compliance
+
+-From Auditing to Penetration Testing
+
 
 
 
