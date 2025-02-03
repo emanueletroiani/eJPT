@@ -17,6 +17,34 @@ Assessment Methodologies: Footprinting & Scanning
 -[Riassunto comandi
 ](https://github.com/emanueletroiani/eJPT/blob/Riassunto1/README.md)
 
+Assessment Methodologies: Enumeration
+
+-[FTP Enumeration](https://github.com/emanueletroiani/eJPT/blob/FTP-Enumeration/README.md)
+
+-[SMB Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMB-Enumeration/README.md)
+
+-[Web Server Enumeration](https://github.com/emanueletroiani/eJPT/blob/Web-Server-Enumeration/README.md)
+
+-[MySQL Enumeration](https://github.com/emanueletroiani/eJPT/blob/MySQL-Enumeration/README.md)
+
+-[SSH Enumeration](https://github.com/emanueletroiani/eJPT/blob/SSH-Enumeration/README.md)
+
+-[SMTP Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMTP-Enumeration/README.md)
+
+-[Riassunto](https://github.com/emanueletroiani/eJPT/blob/Riassunto2/README.md)
+
+Assessment Methodologies: Vulnerability Assessment
+
+-[Vulnerability Assessment: Overview of Windows Vulnerabilities](https://github.com/emanueletroiani/eJPT/blob/Overview-of-Windows-Vulnerabilities/README.md)
+
+-[Vulnerability Assessment: Frequently Exploited Windows Services](https://github.com/emanueletroiani/eJPT/blob/Frequently-Exploited-Windows-Services/README.md)
+
+-Vulnerability Assessment
+
+-Vulnerability Analysis
+
+-Vulnerability Scanning
+
 
 
 
