@@ -1,54 +1,34 @@
-# eJPT
+### Identifying Vulnerabilities and Weaknesses:
 
-![Screenshot 2024-12-21 104842](https://github.com/user-attachments/assets/7530661d-b5f1-4a3c-a16c-5ba224b79131)
+Gli audit di sicurezza aiutano a scoprire le vulnerabilità e le debolezze dei sistemi informativi e dell'infrastruttura di un'organizzazione che potrebbero essere sfruttati dagli aggressori.
 
--[Information Gatering](https://github.com/emanueletroiani/eJPT/tree/Information-Gatering)
+Audit regolari garantiscono che i controlli di sicurezza siano efficaci e aggiornati, minimizzando il rischio di violazioni.
 
--[Riassunto](https://github.com/emanueletroiani/eJPT/blob/Information-Gatering-riassunto/README.md)
+### Garantire la conformità
 
-Assessment Methodologies: Footprinting & Scanning
+Le organizzazioni devono conformarsi a vari requisiti normativi e standard di settore per proteggere i dati sensibili e mantenere la fiducia di clienti e stakeholder.
 
--[Networking Primer](https://github.com/emanueletroiani/eJPT/blob/Networking-Primer/README.md)
+Gli audit di sicurezza aiutano a verificare la conformità con standard come GDPR, HIPAA, PCI DSS e ISO 27001, evitando sanzioni legali e finanziarie.
 
--[Host Discovery](https://github.com/emanueletroiani/eJPT/blob/Host-Discovery-Techniques/README.md)
+### Garantire la gestione del rischio:
 
--[Port Scanning](https://github.com/emanueletroiani/eJPT/blob/Port-Scanning/README.md)
+Sulla base dei risultati dell'audit, si possono sviluppare e attuare strategie efficaci di gestione del rischio per mitigare i rischi identificati.
 
--[Riassunto comandi
-](https://github.com/emanueletroiani/eJPT/blob/Riassunto1/README.md)
+### Migliorare le politiche e le procedure di sicurezza:
 
-Assessment Methodologies: Enumeration
+Gli audit di sicurezza esaminano l'efficacia delle politiche di sicurezza esistenti e identificando le aree da migliorare.
 
--[FTP Enumeration](https://github.com/emanueletroiani/eJPT/blob/FTP-Enumeration/README.md)
+### Supporto agli obiettivi aziendali:
 
--[SMB Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMB-Enumeration/README.md)
+Una solida **struttura** di **sicurezza** **assicura** che le **operazioni aziendali** critiche siano **protette da** interruzioni ****causate da **incidenti** di **sicurezza**.
 
--[Web Server Enumeration](https://github.com/emanueletroiani/eJPT/blob/Web-Server-Enumeration/README.md)
+Gli audit contribuiscono a creare la **fiducia** dei **clienti**, in quanto i clienti hanno la certezza che
+che i loro dati sono gestiti in modo sicuro e responsabile.
 
--[MySQL Enumeration](https://github.com/emanueletroiani/eJPT/blob/MySQL-Enumeration/README.md)
+### **Importanza dell'Auditing di Sicurezza**
 
--[SSH Enumeration](https://github.com/emanueletroiani/eJPT/blob/SSH-Enumeration/README.md)
+L'auditing di sicurezza non è un'attività una tantum ma un processo continuo che promuove il miglioramento continuo.
 
--[SMTP Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMTP-Enumeration/README.md)
-
--[Riassunto](https://github.com/emanueletroiani/eJPT/blob/Riassunto2/README.md)
-
-Assessment Methodologies: Vulnerability Assessment
-
--[Vulnerability Assessment](https://github.com/emanueletroiani/eJPT/blob/Vulnerability-Assessment/README.md)
-
--[Vulnerability Analysis](https://github.com/emanueletroiani/eJPT/tree/Vulnerability-Analysis)
-
--[Vulnerability Scanning](https://github.com/emanueletroiani/eJPT/tree/Vulnerability-Scanning)
-
-Assessment Methodologies: Auditing Fundamentals
-
--Introduction to Security Auditing
-
--Governance, Risk & Compliance
-
--From Auditing to Penetration Testing
-
-
+Audit regolari garantiscono che le misure di sicurezza si evolvano per affrontare nuove minacce e vulnerabilità, mantenendo un approccio proattivo alla sicurezza.
 
 
