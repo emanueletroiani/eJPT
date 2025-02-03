@@ -1,22 +1,35 @@
-# eJPT
+Utilizza la **porta 21**, il suo compito è di facilitare il trasferimento di file tra server e client to clients.
 
-![Screenshot 2024-12-21 104842](https://github.com/user-attachments/assets/7530661d-b5f1-4a3c-a16c-5ba224b79131)
+Utilizzato anche per il **trasferimento** di file **da** e **tra** le **directory** di un **web** server
 
--[Information Gatering](https://github.com/emanueletroiani/eJPT/tree/Information-Gatering)
+Per enumerarlo ci sono diversi auxiliary come i bruteforce in quanto utilizza delle credenziali di accesso vulnerabile anche ad anoniymous
 
--[Riassunto](https://github.com/emanueletroiani/eJPT/blob/Information-Gatering-riassunto/README.md)
+# Esempi enumerazione FTP
 
-Assessment Methodologies: Footprinting & Scanning
+### Vulnerabilità versione servizio
 
--[Networking Primer](https://github.com/emanueletroiani/eJPT/blob/Networking-Primer/README.md)
+1. **service postgresql start**
+2. **msfconsole**
+3. **workspace -a NOME**
+4. **search portscan**
+5. **avviare la tcp scan,** trova le porte aperte ma non le versioni dei servizi che la utilizzano
+6. **search type:auxiliary name:ftp** permette la ricerca del tipo di modulo e il nome da cercare
+7. **auxiliary/scanner/ftp/ftp_version** ci permette di trovare la versione del servizio
+8. settare tutte le options
+9. exploit per ottenere versione servizi
+10. trovato l’xploit per la versione abbiamo Finita la fase di enumerazione. 
 
--[Host Discovery](https://github.com/emanueletroiani/eJPT/blob/Host-Discovery-Techniques/README.md)
+### Brute force per FTP
 
--[Port Scanning](https://github.com/emanueletroiani/eJPT/blob/Port-Scanning/README.md)
+1. **search type:auxiliary name:ftp** permette la ricerca del tipo di modulo e il nome da cercare
+2. **auxiliary/scanner/ftp/ftp_login** modulo per bruteforce
+3. settare le options
+    1. **BRUTEFORCE_SPEED**
+    2. **PASS_FILE** metasploit default /usr/share/metasploit-framework/data/wordlists/unix_passwords.txt
+    3. **USER_FILE** metasploit default /usr/share/metasploit-framework/data/wordlists/common_users.txt
+4. ftp TARGET
 
--[Riassunto comandi
-](https://github.com/emanueletroiani/eJPT/blob/Riassunto1/README.md)
+### Anonymous vulnerabilità check
 
-
-
-
+1. **search type:auxiliary name:ftp** permette la ricerca del tipo di modulo e il nome da cercare
+2. **auxiliary/scanner/ftp/anonymous** modulo per verificare se è presente vulnerabilità anonymous
