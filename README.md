@@ -43,7 +43,7 @@ Assessment Methodologies: Vulnerability Assessment
 
 Assessment Methodologies: Auditing Fundamentals
 
--Introduction to Security Auditing
+-[Introduction to Security Auditing](https://github.com/emanueletroiani/eJPT/blob/Introduction-to-Security-Auditing/README.md)
 
 -Governance, Risk & Compliance
 
