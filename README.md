@@ -37,9 +37,9 @@ Assessment Methodologies: Vulnerability Assessment
 
 -[Vulnerability Assessment](https://github.com/emanueletroiani/eJPT/blob/Vulnerability-Assessment/README.md)
 
--Vulnerability Analysis
+-[Vulnerability Analysis](https://github.com/emanueletroiani/eJPT/tree/Vulnerability-Analysis)
 
--Vulnerability Scanning
+-[Vulnerability Scanning](https://github.com/emanueletroiani/eJPT/tree/Vulnerability-Scanning)
 
 
 
