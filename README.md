@@ -12,10 +12,10 @@ Assessment Methodologies: Footprinting & Scanning
 
 -[Host Discovery](https://github.com/emanueletroiani/eJPT/blob/Host-Discovery-Techniques/README.md)
 
--Port Scanning
+-[Port Scanning](https://github.com/emanueletroiani/eJPT/blob/Port-Scanning/README.md)
 
--Riassunto
-
+-[Riassunto comandi
+](https://github.com/emanueletroiani/eJPT/blob/Riassunto1/README.md)
 
 
 
