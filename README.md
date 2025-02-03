@@ -1,1 +1,17 @@
--Overview of Security Auditing
+Gli audit di sicurezza possono essere categorizzati in base al loro ambito, metodologia e agli aspetti dell'organizzazione su cui si concentrano.
+
+Per i penetration tester, comprendere questi diversi tipi di audit di sicurezza è fondamentale per adattare efficacemente le loro strategie di testing.
+
+La prossima slide descrive i principali tipi di audit di sicurezza:
+
+| **Audit di Sicurezza** | **Obiettivo** | **Importanza** | **Esempio** |
+| --- | --- | --- | --- |
+| Audit Interni | Condotti dal team di audit interno o dai professionisti della sicurezza dell'organizzazione per valutare l'efficacia dei controlli interni e la conformità alle politiche. | Gli audit interni forniscono insight sull'autovalutazione della postura di sicurezza dell'organizzazione e evidenziano aree che potrebbero richiedere test più approfonditi. | Un audit interno potrebbe rivedere i controlli di accesso degli utenti per garantire che solo il personale autorizzato abbia accesso ai dati sensibili. |
+| Audit Esterni | Eseguiti da auditor di terze parti indipendenti per fornire una valutazione imparziale delle misure di sicurezza dell'organizzazione e della conformità agli standard esterni. | Gli audit esterni spesso servono come benchmark per la conformità e l'efficacia della sicurezza. I penetration tester possono utilizzare questi risultati per guidare i loro sforzi di testing. | Un'azienda che si sottopone a un audit di conformità PCI DSS potrebbe assumere un auditor esterno per convalidare i suoi controlli di sicurezza e garantire che soddisfino gli standard richiesti. |
+| Audit di Conformità | Si concentrano sulla verifica che l'organizzazione sia conforme a specifici requisiti normativi e standard di settore (es. GDPR, HIPAA, PCI DSS). | Gli audit di conformità aiutano a identificare lacune normative che i penetration tester possono affrontare attraverso test mirati. | Un fornitore di servizi sanitari potrebbe sottoporsi a un audit di conformità HIPAA per garantire che i dati dei pazienti siano protetti secondo le normative federali. |
+
+| **Audit di Sicurezza** | **Obiettivo** | **Importanza** | **Esempio** |
+| --- | --- | --- | --- |
+| Audit Tecnici | Si concentrano sulla valutazione degli aspetti tecnici dell'infrastruttura IT dell'organizzazione, inclusi hardware, software e configurazioni di rete. | Gli audit tecnici forniscono una visione dettagliata dei controlli tecnici in atto, evidenziando aree in cui il penetration testing può scoprire vulnerabilità. | Un audit tecnico potrebbe comportare una revisione approfondita delle configurazioni del firewall per garantire che proteggano correttamente il perimetro della rete. |
+| Audit di Rete | Valutano la sicurezza dell'infrastruttura di rete dell'organizzazione, inclusi router, switch, firewall e altri dispositivi di rete. | Gli audit di rete possono rivelare vulnerabilità nella progettazione e nelle configurazioni di rete che i penetration tester possono sfruttare per valutare la sicurezza della rete. | Un audit di rete potrebbe identificare protocolli insicuri utilizzati per la trasmissione dei dati, spingendo i penetration tester a testare potenziali exploit. |
+| Audit delle Applicazioni | Valutano la sicurezza delle applicazioni software, concentrandosi sulla qualità del codice, la validazione degli input, i meccanismi di autenticazione e la gestione dei dati. | Gli audit delle applicazioni evidenziano difetti di sicurezza nelle applicazioni che i penetration tester possono sfruttare per dimostrare scenari di attacco reali. | Un audit delle applicazioni potrebbe rivelare vulnerabilità come SQL injection o cross-site scripting (XSS) in un'applicazione web. |
