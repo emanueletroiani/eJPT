@@ -35,11 +35,7 @@ Assessment Methodologies: Enumeration
 
 Assessment Methodologies: Vulnerability Assessment
 
--[Vulnerability Assessment: Overview of Windows Vulnerabilities](https://github.com/emanueletroiani/eJPT/blob/Overview-of-Windows-Vulnerabilities/README.md)
-
--[Vulnerability Assessment: Frequently Exploited Windows Services](https://github.com/emanueletroiani/eJPT/blob/Frequently-Exploited-Windows-Services/README.md)
-
--Vulnerability Assessment
+-[Vulnerability Assessment](https://github.com/emanueletroiani/eJPT/edit/Vulnerability-Assessment/README.md)
 
 -Vulnerability Analysis
 
