@@ -1,22 +1,14 @@
-# eJPT
+**Servizi Windows frequentemente sfruttati**
 
-![Screenshot 2024-12-21 104842](https://github.com/user-attachments/assets/7530661d-b5f1-4a3c-a16c-5ba224b79131)
+- Windows ha vari servizi nativi che possono essere configurati per essere eseguiti su un host.
+- Questi servizi forniscono un vettore di accesso per gli attaccanti.
+- È importante comprendere questi servizi, come funzionano e le loro potenziali vulnerabilità.
 
--[Information Gatering](https://github.com/emanueletroiani/eJPT/tree/Information-Gatering)
-
--[Riassunto](https://github.com/emanueletroiani/eJPT/blob/Information-Gatering-riassunto/README.md)
-
-Assessment Methodologies: Footprinting & Scanning
-
--[Networking Primer](https://github.com/emanueletroiani/eJPT/blob/Networking-Primer/README.md)
-
--[Host Discovery](https://github.com/emanueletroiani/eJPT/blob/Host-Discovery-Techniques/README.md)
-
--[Port Scanning](https://github.com/emanueletroiani/eJPT/blob/Port-Scanning/README.md)
-
--[Riassunto comandi
-](https://github.com/emanueletroiani/eJPT/blob/Riassunto1/README.md)
-
-
-
+| **Protocollo/Servizio** | **Porte** | **Scopo** |
+| --- | --- | --- |
+| Microsoft IIS (Internet Information Services) | TCP 80/443 | Software pubblicato da Microsoft che **trasforma** il **computer** su cui è in esecuzione in un **server web** |
+| WebDAV (Web Distributed Authoring & Versioning) | TCP 80/443 | Estensione **HTTP** che permette di **aggiornare**, **cancellare**, **spostare** e **copiare** **file** su un **server web.** |
+| SMB/CIFS (Server Message Block Protocol) | TCP 445 | Protocollo di condivisione file in rete. |
+| RDP (Remote Desktop Protocol) | TCP 3389 | Protocollo di accesso remoto GUI sviluppato da Microsoft. |
+| WinRM (Windows Remote Management Protocol) | TCP 5986/443 | Protocollo di gestione remota di Windows. |
 
