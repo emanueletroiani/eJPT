@@ -1,50 +1,43 @@
-# eJPT
+La **scansione** e il **rilevamento** delle **vulnerabilità** è il processo di scansione di un obiettivo alla ricerca di vulnerabilità e **verificare se possono** essere **sfruttate**.
 
-![Screenshot 2024-12-21 104842](https://github.com/user-attachments/assets/7530661d-b5f1-4a3c-a16c-5ba224b79131)
+1. cerchiamo porte aperte
+2. troviamo la versione dei servizi sulle porte aperte
 
--[Information Gatering](https://github.com/emanueletroiani/eJPT/tree/Information-Gatering)
+### CON METASPLOIT
 
--[Riassunto](https://github.com/emanueletroiani/eJPT/blob/Information-Gatering-riassunto/README.md)
+1. cerchiamo il nome della versione per vedere se c’è un exploit
+    1. **search NOME_VERSIONE**
+    2. **search type:exploit name:SERVIZIO**
+2. trovato l’exploit utilizziamolo
+3. **info** per vedere se l’exploit va bene per la versione del servizio
+4. cerchiamo il payload per il sistema operativo giusto e quello che fa al caso nostro
+    1. **search peyload**
+5. ci fermiamo qui per il momento
 
-Assessment Methodologies: Footprinting & Scanning
+### SU SHELL
 
--[Networking Primer](https://github.com/emanueletroiani/eJPT/blob/Networking-Primer/README.md)
+1. **searchsploit “NOME_SERVIZIO”** cerca exploit per quel servizio
+2. **searchsploit “NOME_SERVIZIO” | grep -e “Metaploit”** cerca solo i moduli per metasploit
 
--[Host Discovery](https://github.com/emanueletroiani/eJPT/blob/Host-Discovery-Techniques/README.md)
+### Plug-in [autopwn](https://github.com/hahwul/metasploit-autopwn)
 
--[Port Scanning](https://github.com/emanueletroiani/eJPT/blob/Port-Scanning/README.md)
+Scaricabile su kali tramite github repository
 
--[Riassunto comandi
-](https://github.com/emanueletroiani/eJPT/blob/Riassunto1/README.md)
+Autopwn individua moduli metasploit di porte aperte sul sistema target
 
-Assessment Methodologies: Enumeration
+**Come impostarlo**
 
--[FTP Enumeration](https://github.com/emanueletroiani/eJPT/blob/FTP-Enumeration/README.md)
-
--[SMB Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMB-Enumeration/README.md)
-
--[Web Server Enumeration](https://github.com/emanueletroiani/eJPT/blob/Web-Server-Enumeration/README.md)
-
--[MySQL Enumeration](https://github.com/emanueletroiani/eJPT/blob/MySQL-Enumeration/README.md)
-
--[SSH Enumeration](https://github.com/emanueletroiani/eJPT/blob/SSH-Enumeration/README.md)
-
--[SMTP Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMTP-Enumeration/README.md)
-
--[Riassunto](https://github.com/emanueletroiani/eJPT/blob/Riassunto2/README.md)
-
-Assessment Methodologies: Vulnerability Assessment
-
--[Vulnerability Assessment: Overview of Windows Vulnerabilities](https://github.com/emanueletroiani/eJPT/blob/Overview-of-Windows-Vulnerabilities/README.md)
-
--[Vulnerability Assessment: Frequently Exploited Windows Services](https://github.com/emanueletroiani/eJPT/blob/Frequently-Exploited-Windows-Services/README.md)
-
--Vulnerability Assessment
-
--Vulnerability Analysis
-
--Vulnerability Scanning
-
-
+1.  **wget https://raw.githubusercontent.com/hahwul/metasploit-autopwn/master/db_autopwn.rb**
+2. ora bisogna spostare il database nella share metasploit
+    1. **cd metasploit-autopwn**
+    2. **cp db_autopwn.rb /usr/share/metasploit-framework/plugins**
+3. su MSF **load db_autopwn**
+4. **db_autopwn -p -t -PI**
+    1. **-p** seleziona i moduli in base alle porte aperte
+    2. **-t** mostra tutti i moduli degli exploit metchati
+    3. **-PI N°_PORTA** specifica quali exploit trovare sulla porta target aperta dell’hos
+    
+5. **analyze** analizza tutto cio’ che abbiamo trovato sull’ host target e mostra quali exploit possono essere sfruttate.
+6. **vulns** mostra le vulnerabilita’ trovate
 
 
