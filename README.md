@@ -45,7 +45,7 @@ Assessment Methodologies: Auditing Fundamentals
 
 -[Introduction to Security Auditing](https://github.com/emanueletroiani/eJPT/blob/Introduction-to-Security-Auditing/README.md)
 
--Governance, Risk & Compliance
+-[Governance, Risk & Compliance](https://github.com/emanueletroiani/eJPT/blob/Governance,-Risk-&-Compliance/README.md)
 
 -From Auditing to Penetration Testing
 
