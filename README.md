@@ -1,22 +1,14 @@
-# eJPT
+SMTP è un **protocollo** di **comunicazione** utilizzato per l’invio di **email**
 
-![Screenshot 2024-12-21 104842](https://github.com/user-attachments/assets/7530661d-b5f1-4a3c-a16c-5ba224b79131)
+Utilizza la **porta** TCP **25** di default, può essere configurato anche nella porta **465** e **587 se** criptata da **ssl/tls**
 
--[Information Gatering](https://github.com/emanueletroiani/eJPT/tree/Information-Gatering)
-
--[Riassunto](https://github.com/emanueletroiani/eJPT/blob/Information-Gatering-riassunto/README.md)
-
-Assessment Methodologies: Footprinting & Scanning
-
--[Networking Primer](https://github.com/emanueletroiani/eJPT/blob/Networking-Primer/README.md)
-
--[Host Discovery](https://github.com/emanueletroiani/eJPT/blob/Host-Discovery-Techniques/README.md)
-
--[Port Scanning](https://github.com/emanueletroiani/eJPT/blob/Port-Scanning/README.md)
-
--[Riassunto comandi
-](https://github.com/emanueletroiani/eJPT/blob/Riassunto1/README.md)
-
-
-
-
+1. **service postgresql start**
+2. **msfconsole**
+3. **workspace -a NOME**
+4. **setg RHOST IP_TARGET** memorizza il target ip nei moduli
+5. **setg RHOSTS IP_TARGET** memorizza il target ip nei moduli
+6. **search portscan**
+7. **avviare la tcp scan,** trova le porte aperte ma non le versioni dei servizi che la utilizzano
+8. **search type:auxiliary name:smtp** permette la ricerca del tipo di modulo e il nome da cercare
+9. **auxiliary/scanner/smtp/smtp_version** ci permette di trovare la versione del servizio
+10. **auxiliary/scanner/smtp/smtp_enum** enumera gli utenti
