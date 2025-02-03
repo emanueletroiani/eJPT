@@ -35,7 +35,7 @@ Assessment Methodologies: Enumeration
 
 Assessment Methodologies: Vulnerability Assessment
 
--[Vulnerability Assessment](https://github.com/emanueletroiani/eJPT/edit/Vulnerability-Assessment/README.md)
+-[Vulnerability Assessment](https://github.com/emanueletroiani/eJPT/blob/Vulnerability-Assessment/README.md)
 
 -Vulnerability Analysis
 
