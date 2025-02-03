@@ -49,6 +49,17 @@ Assessment Methodologies: Auditing Fundamentals
 
 -From Auditing to Penetration Testing
 
+Host & Network Penetration Testing: System/Host Based Attacks
+
+-Windows Vulnerabilities
+
+-Exploiting Windows Vulnerabilities
+
+-Windows Privilege Escalation
+
+-Windows File System Vulnerabilities
+
+-Windows Credential Dumping
 
 
 
