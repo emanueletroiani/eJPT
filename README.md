@@ -1,76 +1,50 @@
-# eJPT
+Possiamo utilizzare questi moduli post exploitation per enumerare le informazioni sul
+sistema Windows a cui abbiamo accesso:
 
-![Screenshot 2024-12-21 104842](https://github.com/user-attachments/assets/7530661d-b5f1-4a3c-a16c-5ba224b79131)
+- Enumerare i privilegi degli utenti
+- Enumerare gli utenti connessi
+- Controllo VM
+- Enumerare i programmi installati
+- Enumerare gli AV
+- Enumerare i computer collegati al dominio
+- Enumerare le patch installate
+- Enumerare le azioni
 
--[Information Gatering](https://github.com/emanueletroiani/eJPT/tree/Information-Gatering)
+COMANDI METERPRETER PER windows
 
--[Riassunto](https://github.com/emanueletroiani/eJPT/blob/Information-Gatering-riassunto/README.md)
+molto piu potente rispetto alla linux
 
-Assessment Methodologies: Footprinting & Scanning
+- `help` apre lista comando
+- `getsystem` se siamo fortunati ci scala cosi
+- **getprivs** vediamo se c’è uno dei privilegi necessari per sfruttare vulnerabilità Token. Uno dei seguenti
+    - **SeAssignPrimaryToken** se presente procedere con il punt 4
+    - **SeCreateToken**
+    - **SeImpersonatePrivilege** se è presente questo possiamo ottenere privilegi digitando `getsystem`
+- **`hashdump**` ci darà LM hash (uguale per tutti gli utentu) e la NTLM hash (univoca)
+    - copiare gli hash insieme **Esempio= LM0000000:NTLM00000**
+- `show_mount` lista gli hardisks
+    - **fixed** sono ad esempio il disco C:\
+    - **removible** sono per esempio le pennette USB
+1. `ps` lista i processi
+    1. `migrate explorer.exe`migra su quel processo e trasforma meterpreter in sessione x64
 
--[Networking Primer](https://github.com/emanueletroiani/eJPT/blob/Networking-Primer/README.md)
+COMANDI PER SPIARE
 
--[Host Discovery](https://github.com/emanueletroiani/eJPT/blob/Host-Discovery-Techniques/README.md)
+- `screenshot` salva lo schermo del target
+- `keyscan_start` cattura i tasti premuti sul target
+- `keyscan_stop`
+- `record_mic` avvia la registrazione del microfono sul target
+- `webcam_list` lista le webcam
+- webacam_steam avvia una registrazione sulla webcam selezionata
 
--[Port Scanning](https://github.com/emanueletroiani/eJPT/blob/Port-Scanning/README.md)
+### Moduli msconsole per post Exploitation
 
--[Riassunto comandi
-](https://github.com/emanueletroiani/eJPT/blob/Riassunto1/README.md)
+tutti i moduli eseguiti vengono salvati da metasploit in una directory, possiamo vedere cosa salva e cosa cattura con il comando `loot`
 
-Assessment Methodologies: Enumeration
-
--[FTP Enumeration](https://github.com/emanueletroiani/eJPT/blob/FTP-Enumeration/README.md)
-
--[SMB Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMB-Enumeration/README.md)
-
--[Web Server Enumeration](https://github.com/emanueletroiani/eJPT/blob/Web-Server-Enumeration/README.md)
-
--[MySQL Enumeration](https://github.com/emanueletroiani/eJPT/blob/MySQL-Enumeration/README.md)
-
--[SSH Enumeration](https://github.com/emanueletroiani/eJPT/blob/SSH-Enumeration/README.md)
-
--[SMTP Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMTP-Enumeration/README.md)
-
--[Riassunto](https://github.com/emanueletroiani/eJPT/blob/Riassunto2/README.md)
-
-Assessment Methodologies: Vulnerability Assessment
-
--[Vulnerability Assessment](https://github.com/emanueletroiani/eJPT/blob/Vulnerability-Assessment/README.md)
-
--[Vulnerability Analysis](https://github.com/emanueletroiani/eJPT/tree/Vulnerability-Analysis)
-
--[Vulnerability Scanning](https://github.com/emanueletroiani/eJPT/tree/Vulnerability-Scanning)
-
-Assessment Methodologies: Auditing Fundamentals
-
--[Introduction to Security Auditing](https://github.com/emanueletroiani/eJPT/blob/Introduction-to-Security-Auditing/README.md)
-
--[Governance, Risk & Compliance](https://github.com/emanueletroiani/eJPT/blob/Governance,-Risk-&-Compliance/README.md)
-
--From Auditing to Penetration Testing
-
-Host & Network Penetration Testing: System/Host Based Attacks
-
--[Windows Vulnerabilities](https://github.com/emanueletroiani/eJPT/blob/Windows-Vulnerabilities/README.md)
-
--[Exploiting Windows Vulnerabilities](https://github.com/emanueletroiani/eJPT/tree/Exploiting-Windows-Vulnerabilities)
-
--[Windows Privilege Escalation](https://github.com/emanueletroiani/eJPT/edit/Windows-Privilege-Escalation/README.md)
-
--[Windows File System Vulnerabilities](https://github.com/emanueletroiani/eJPT/blob/Alternate-Data-Streams/README.md)
-
--[Windows Credential Dumping](https://github.com/emanueletroiani/eJPT/tree/Windows-Credential-Dumping)
-
--[Exploiting Linux Vulnerabilities](https://github.com/emanueletroiani/eJPT/blob/Exploiting-Linux-Vulnerabilities/README.md)
-
--[Linux Privilege Escalation](https://github.com/emanueletroiani/eJPT/blob/Linux-Privilege-Escalation/README.md)
-
--[Linux Credential Dumping](https://github.com/emanueletroiani/eJPT/blob/Linux-Credential-Dumping/README.md)
-
-Host & Network Penetration Testing: Network-Based Attacks
-
--[SMB & NetBIOS Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMB-&-NetBIOS-Enumeration/README.md)
-
--[SNMP Enumeration](https://github.com/emanueletroiani/eJPT/blob/SNMP-Enumeration/README.md)
-
--[SMB Relay Attack](https://github.com/emanueletroiani/eJPT/blob/SMB-Relay-Attack/README.md)
+- `use post/windows/gather/win_privs` enumera i privilegi (getpriv ma meglio)
+- `use post/windows/gather/enum_logged_on_users` enumera gli utenti loggati in questo momento e quelli recenti
+- `use post/windows/gather/checkvm` verifica se il target è un VM
+- `use post/windows/gather/enum_applications` enumera le app e i programmi istallati, SUPER POTETNE per trovare vulnerabilità e scalare i privilegi tra i servizi elencati
+- `use post/windows/gather/enum_computers` enumera i PC connessi alla stessa rete del target
+- `use post/windows/gather/enum_shares` enumera le cartelle condivise
+- `use post/windows/gather/enum_av_excluded` enumera le Directory che non sono scansionate dall’AV. Utile per sapere dove inserire file malevoli e backdoor
