@@ -61,5 +61,16 @@ Host & Network Penetration Testing: System/Host Based Attacks
 
 -[Windows Credential Dumping](https://github.com/emanueletroiani/eJPT/tree/Windows-Credential-Dumping)
 
--Exploiting Linux Vulnerabilities
+-[Exploiting Linux Vulnerabilities](https://github.com/emanueletroiani/eJPT/blob/Exploiting-Linux-Vulnerabilities/README.md)
 
+-[Linux Privilege Escalation](https://github.com/emanueletroiani/eJPT/blob/Linux-Privilege-Escalation/README.md)
+
+-[Linux Credential Dumping](https://github.com/emanueletroiani/eJPT/blob/Linux-Credential-Dumping/README.md)
+
+Host & Network Penetration Testing: Network-Based Attacks
+
+-[SMB & NetBIOS Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMB-&-NetBIOS-Enumeration/README.md)
+
+-[SNMP Enumeration](https://github.com/emanueletroiani/eJPT/blob/SNMP-Enumeration/README.md)
+
+-[SMB Relay Attack](https://github.com/emanueletroiani/eJPT/blob/SMB-Relay-Attack/README.md)
