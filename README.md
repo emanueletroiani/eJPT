@@ -53,13 +53,13 @@ Host & Network Penetration Testing: System/Host Based Attacks
 
 -[Windows Vulnerabilities](https://github.com/emanueletroiani/eJPT/blob/Windows-Vulnerabilities/README.md)
 
--Exploiting Windows Vulnerabilities
+-[Exploiting Windows Vulnerabilities](https://github.com/emanueletroiani/eJPT/tree/Exploiting-Windows-Vulnerabilities)
 
--Windows Privilege Escalation
+-[Windows Privilege Escalation](https://github.com/emanueletroiani/eJPT/edit/Windows-Privilege-Escalation/README.md)
 
--Windows File System Vulnerabilities
+-[Windows File System Vulnerabilities](https://github.com/emanueletroiani/eJPT/blob/Alternate-Data-Streams/README.md)
 
--Windows Credential Dumping
+-[Windows Credential Dumping](https://github.com/emanueletroiani/eJPT/tree/Windows-Credential-Dumping)
 
-
+-Exploiting Linux Vulnerabilities
 
