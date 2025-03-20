@@ -74,3 +74,35 @@ Host & Network Penetration Testing: Network-Based Attacks
 -[SNMP Enumeration](https://github.com/emanueletroiani/eJPT/blob/SNMP-Enumeration/README.md)
 
 -[SMB Relay Attack](https://github.com/emanueletroiani/eJPT/blob/SMB-Relay-Attack/README.md)
+
+Host & Network Penetration Testing: The Metasploit Framework (MSF)
+
+-[Architecture Terminologia essenziale](https://github.com/emanueletroiani/eJPT/blob/Architecture-Terminologia-essenziale/README.md)
+
+-[Generating Payloads With Msfvenom](https://github.com/emanueletroiani/eJPT/blob/Generating-Payloads-With-Msfvenom/README.md)
+
+-[Encoding Payloads With Msfvenom](https://github.com/emanueletroiani/eJPT/blob/Encoding-Payloads-With-Msfvenom/README.md)
+
+-[Injecting Payloads Into Windows Portable Executables](https://github.com/emanueletroiani/eJPT/blob/Injecting-Payloads-Into-Windows-Portable-Executables/README.md)
+
+-[Automating: automating Metasploit With Resource Scripts](https://github.com/emanueletroiani/eJPT/blob/Automating-automating-Metasploit-With-Resource-Scripts/README.md)
+
+-[Exploiting A Vulnerable Apache Tomcat Web Server](https://github.com/emanueletroiani/eJPT/blob/Exploiting-A-Vulnerable-Apache-Tomcat-Web-Server/README.md)
+
+-[Post Exploitation Fundamentals: Fondamenti di Meterpreter](https://github.com/emanueletroiani/eJPT/blob/Post-Exploitation-Fundamentals-Fondamenti-di-Meterpreter/README.md)
+
+-[Windows Post Exploitation](https://github.com/emanueletroiani/eJPT/blob/Windows-Post-Exploitation-Modules/README.md)
+
+-[Linux Post Exploitation](https://github.com/emanueletroiani/eJPT/blob/Linux-Post-Exploitation/README.md)
+
+-[Metasploit GUIs: Armitage](https://github.com/emanueletroiani/eJPT/blob/Metasploit-GUIs-Armitage/README.md)
+
+Host & Network Penetration Testing: Exploitation
+
+-[Vulnerability Scanning: Banner Grabbing](https://github.com/emanueletroiani/eJPT/blob/Vulnerability-Scanning-Banner-Grabbing/README.md)
+
+-[Searching For Exploits](https://github.com/emanueletroiani/eJPT/blob/Searching-For-Exploits/README.md)
+
+-[Bind & Reverse Shells](https://github.com/emanueletroiani/eJPT/blob/Bind-&-Reverse-Shells/README.md)
+
+-[Exploitation Frameworks: Power-shell empire](https://github.com/emanueletroiani/eJPT/blob/Power-shell-empire/README.md)
