@@ -51,7 +51,7 @@ Assessment Methodologies: Auditing Fundamentals
 
 Host & Network Penetration Testing: System/Host Based Attacks
 
--Windows Vulnerabilities
+-[Windows Vulnerabilities](https://github.com/emanueletroiani/eJPT/blob/Windows-Vulnerabilities/README.md)
 
 -Exploiting Windows Vulnerabilities
 
