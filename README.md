@@ -1,65 +1,27 @@
-# eJPT
+Alternate Data Streams (ADS) è un attributo di file NTFS (New Technology File System) ed è stato progettato per fornire compatibilità  con il sistema HFS (Hierarchical File System) di MacOS.
 
-![Screenshot 2024-12-21 104842](https://github.com/user-attachments/assets/7530661d-b5f1-4a3c-a16c-5ba224b79131)
+Qualsiasi file creato su un'unità formattata con NTFS avrà due diverse biforcazioni/flussi:
 
--[Information Gatering](https://github.com/emanueletroiani/eJPT/tree/Information-Gatering)
+- **Data Steams** - Flusso predefinito che contiene i dati del file.
+- **Resources steams** - In genere contiene i metadati del file.
 
--[Riassunto](https://github.com/emanueletroiani/eJPT/blob/Information-Gatering-riassunto/README.md)
+**Gli aggressori possono utilizzare gli ADS per nascondere codice o eseguibili dannosi in file legittimi al fine di eludere il rilevamento.**
 
-Assessment Methodologies: Footprinting & Scanning
+Questa **tecnica** viene solitamente utilizzata per **eludere** i **sistemi AV basati sulle firme** **digitali** (**CVE e TTP)** e gli strumenti di scansione statica.
 
--[Networking Primer](https://github.com/emanueletroiani/eJPT/blob/Networking-Primer/README.md)
+EXPLOIT
 
--[Host Discovery](https://github.com/emanueletroiani/eJPT/blob/Host-Discovery-Techniques/README.md)
+- **notepad FILE.txt:HIDDEN.FILE.txt** da Terminale Windows questo comando creerà un file nascosto .txt dentro il file visibile FILE.TXT (neanche i byte dell’hidden file saranno visualizzati)
+    - notepad è il programma utilizzato, possiamo sostituirlo con qualsiasi programma, esempio Word
 
--[Port Scanning](https://github.com/emanueletroiani/eJPT/blob/Port-Scanning/README.md)
+COME SFRUTTIAMO QUESTO FEATURE? 
 
--[Riassunto comandi
-](https://github.com/emanueletroiani/eJPT/blob/Riassunto1/README.md)
+1. **Caricare nella cartella Temp del Target un FILE.txt** apparentemente innocuo (ad esempio chiamandolo windowslogs.txt) ed un payload.exe 
+2. **type payload.exe > windowslogs.txt:nomequalsiasi.exe** nasconde il file payload.exe all’interno del file windowslogs.txt
+3. **Falsificare il contenuto del file windowslogs.tx**t con logs falsi in modo da non destare sospetti
+4. **del payload.ex**e cancellare il payload dalla cartella TEMP
+5. **start** **windowslogs.txt:nomequalsiasi.exe** avviare il payload.exe
 
-Assessment Methodologies: Enumeration
+oppure possiamo fare in modo che venga eseguito automaticamente
 
--[FTP Enumeration](https://github.com/emanueletroiani/eJPT/blob/FTP-Enumeration/README.md)
-
--[SMB Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMB-Enumeration/README.md)
-
--[Web Server Enumeration](https://github.com/emanueletroiani/eJPT/blob/Web-Server-Enumeration/README.md)
-
--[MySQL Enumeration](https://github.com/emanueletroiani/eJPT/blob/MySQL-Enumeration/README.md)
-
--[SSH Enumeration](https://github.com/emanueletroiani/eJPT/blob/SSH-Enumeration/README.md)
-
--[SMTP Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMTP-Enumeration/README.md)
-
--[Riassunto](https://github.com/emanueletroiani/eJPT/blob/Riassunto2/README.md)
-
-Assessment Methodologies: Vulnerability Assessment
-
--[Vulnerability Assessment](https://github.com/emanueletroiani/eJPT/blob/Vulnerability-Assessment/README.md)
-
--[Vulnerability Analysis](https://github.com/emanueletroiani/eJPT/tree/Vulnerability-Analysis)
-
--[Vulnerability Scanning](https://github.com/emanueletroiani/eJPT/tree/Vulnerability-Scanning)
-
-Assessment Methodologies: Auditing Fundamentals
-
--[Introduction to Security Auditing](https://github.com/emanueletroiani/eJPT/blob/Introduction-to-Security-Auditing/README.md)
-
--[Governance, Risk & Compliance](https://github.com/emanueletroiani/eJPT/blob/Governance,-Risk-&-Compliance/README.md)
-
--From Auditing to Penetration Testing
-
-Host & Network Penetration Testing: System/Host Based Attacks
-
--[Windows Vulnerabilities](https://github.com/emanueletroiani/eJPT/blob/Windows-Vulnerabilities/README.md)
-
--Exploiting Windows Vulnerabilities
-
--Windows Privilege Escalation
-
--Windows File System Vulnerabilities
-
--Windows Credential Dumping
-
-
-
+1. **cd Windows\System32\mklink wupdate.exe C:\Temp\windowslogs.txt:nomequalsiasi.exe** crea un link simbolico, ovvero ogni volta che digitiamo **wupdate** nella riga dei comandi si avvierà il payload
