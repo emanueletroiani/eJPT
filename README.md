@@ -1,76 +1,41 @@
-# eJPT
+### Terminologia essenziale
 
-![Screenshot 2024-12-21 104842](https://github.com/user-attachments/assets/7530661d-b5f1-4a3c-a16c-5ba224b79131)
+- **Interfaccia** - Metodi di interazione con il Metasploit Framework.
+- **Modulo** - Pezzi di codice che eseguono un compito particolare; un esempio di modulo è un
+exploit.
+- **Vulnerabilità** - Debolezza o difetto di un sistema informatico o di una rete che può essere sfruttato.
+- **Exploit** - Pezzo di codice/modulo utilizzato per sfruttare una vulnerabilità all'interno di un
+sistema, servizio o applicazione.
+- **Payload** - Pezzo di codice inviato al sistema di destinazione da un exploit con l'obiettivo di eseguire
+comandi arbitrari o fornire accesso remoto a un aggressore.
 
--[Information Gatering](https://github.com/emanueletroiani/eJPT/tree/Information-Gatering)
+- **Listener** - Un'utilità che ascolta una connessione in arrivo da una destinazione.
 
--[Riassunto](https://github.com/emanueletroiani/eJPT/blob/Information-Gatering-riassunto/README.md)
+![image](https://github.com/user-attachments/assets/7f3dab2d-dc24-4695-8d1b-4b3769f43eb3)
 
-Assessment Methodologies: Footprinting & Scanning
 
--[Networking Primer](https://github.com/emanueletroiani/eJPT/blob/Networking-Primer/README.md)
+- **Le librerie:** MSF facilitano **l'esecuzione** dei **moduli senza** dover **scrivere** il **codice** necessario per eseguirli.
+    - **Un modulo:** nel contesto di MSF, è un pezzo di **codice** che può essere **utilizzato da MSF**.
+        - **Exploit** - Un modulo utilizzato per **sfruttare** una **vulnerabilità**
+        - **Payload** - **Codice** fornito da MSF ed **eseguito** in **remoto sul bersaglio** dopo l'exploit
+        riuscito. Un esempio di payload è una **reverse shell** che avvia una connessione
+        dal sistema di destinazione all'attaccante.
+        - **Encoder** - Utilizzato per **codificare** i **payload** al fine di **evitare** il **rilevamento anti malware**.
+        Ad esempio, shikata_ga_nai è utilizzato per codificare i payload di Windows.
+        - **NOPS** - Utilizzato per **garantire** che le **dimensioni** dei **payload** siano **coerenti** e per assicurare la **stabilità** di un payload quando viene eseguito.
+        - **Ausiliario** - Un modulo utilizzato per eseguire **funzionalità** aggiuntive **come** la
+        **scansione** e **l'enumerazione delle porte.**
 
--[Host Discovery](https://github.com/emanueletroiani/eJPT/blob/Host-Discovery-Techniques/README.md)
+### Tipo di Payload
 
--[Port Scanning](https://github.com/emanueletroiani/eJPT/blob/Port-Scanning/README.md)
+- **Non-staged Payload** - Payload che viene **inviato** al **sistema** di **destinazione così**
+**com'è** insieme all'exploit.
+- **Staged Payload** -Payload viene **inviato** al **bersaglio** in **due part**i, per cui:
+La **prima parte** (stager) contiene un payload che viene utilizzato per **stabilire**
+una **connessione** **inversa all'attaccante**, scaricare la seconda parte del
+payload (stage) ed eseguirla.
 
--[Riassunto comandi
-](https://github.com/emanueletroiani/eJPT/blob/Riassunto1/README.md)
+### Stager & Stage
 
-Assessment Methodologies: Enumeration
-
--[FTP Enumeration](https://github.com/emanueletroiani/eJPT/blob/FTP-Enumeration/README.md)
-
--[SMB Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMB-Enumeration/README.md)
-
--[Web Server Enumeration](https://github.com/emanueletroiani/eJPT/blob/Web-Server-Enumeration/README.md)
-
--[MySQL Enumeration](https://github.com/emanueletroiani/eJPT/blob/MySQL-Enumeration/README.md)
-
--[SSH Enumeration](https://github.com/emanueletroiani/eJPT/blob/SSH-Enumeration/README.md)
-
--[SMTP Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMTP-Enumeration/README.md)
-
--[Riassunto](https://github.com/emanueletroiani/eJPT/blob/Riassunto2/README.md)
-
-Assessment Methodologies: Vulnerability Assessment
-
--[Vulnerability Assessment](https://github.com/emanueletroiani/eJPT/blob/Vulnerability-Assessment/README.md)
-
--[Vulnerability Analysis](https://github.com/emanueletroiani/eJPT/tree/Vulnerability-Analysis)
-
--[Vulnerability Scanning](https://github.com/emanueletroiani/eJPT/tree/Vulnerability-Scanning)
-
-Assessment Methodologies: Auditing Fundamentals
-
--[Introduction to Security Auditing](https://github.com/emanueletroiani/eJPT/blob/Introduction-to-Security-Auditing/README.md)
-
--[Governance, Risk & Compliance](https://github.com/emanueletroiani/eJPT/blob/Governance,-Risk-&-Compliance/README.md)
-
--From Auditing to Penetration Testing
-
-Host & Network Penetration Testing: System/Host Based Attacks
-
--[Windows Vulnerabilities](https://github.com/emanueletroiani/eJPT/blob/Windows-Vulnerabilities/README.md)
-
--[Exploiting Windows Vulnerabilities](https://github.com/emanueletroiani/eJPT/tree/Exploiting-Windows-Vulnerabilities)
-
--[Windows Privilege Escalation](https://github.com/emanueletroiani/eJPT/edit/Windows-Privilege-Escalation/README.md)
-
--[Windows File System Vulnerabilities](https://github.com/emanueletroiani/eJPT/blob/Alternate-Data-Streams/README.md)
-
--[Windows Credential Dumping](https://github.com/emanueletroiani/eJPT/tree/Windows-Credential-Dumping)
-
--[Exploiting Linux Vulnerabilities](https://github.com/emanueletroiani/eJPT/blob/Exploiting-Linux-Vulnerabilities/README.md)
-
--[Linux Privilege Escalation](https://github.com/emanueletroiani/eJPT/blob/Linux-Privilege-Escalation/README.md)
-
--[Linux Credential Dumping](https://github.com/emanueletroiani/eJPT/blob/Linux-Credential-Dumping/README.md)
-
-Host & Network Penetration Testing: Network-Based Attacks
-
--[SMB & NetBIOS Enumeration](https://github.com/emanueletroiani/eJPT/blob/SMB-&-NetBIOS-Enumeration/README.md)
-
--[SNMP Enumeration](https://github.com/emanueletroiani/eJPT/blob/SNMP-Enumeration/README.md)
-
--[SMB Relay Attack](https://github.com/emanueletroiani/eJPT/blob/SMB-Relay-Attack/README.md)
+- **Stager** -  tipicamente utilizzati per stabilire un canale di comunicazione stabile tra l'attaccante e l'obiettivo, il payload di uno stage viene scaricato ed eseguito sul sistema di destinazione. (**meterpreter**)
+- **Stage** - Componenti del payload che vengono scaricati dallo stager.
