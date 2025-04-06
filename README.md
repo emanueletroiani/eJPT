@@ -47,7 +47,7 @@ Assessment Methodologies: Auditing Fundamentals
 
 -[Governance, Risk & Compliance](https://github.com/emanueletroiani/eJPT/blob/Governance,-Risk-&-Compliance/README.md)
 
--From Auditing to Penetration Testing
+-[From Auditing to Penetration Testing](https://github.com/emanueletroiani/eJPTv2/edit/From-Auditing-to-Penetration-Testing/README.md)
 
 Host & Network Penetration Testing: System/Host Based Attacks
 
