@@ -106,3 +106,12 @@ Host & Network Penetration Testing: Exploitation
 -[Bind & Reverse Shells](https://github.com/emanueletroiani/eJPT/blob/Bind-&-Reverse-Shells/README.md)
 
 -[Exploitation Frameworks: Power-shell empire](https://github.com/emanueletroiani/eJPT/blob/Power-shell-empire/README.md)
+
+Web Application Penetration Testing: Introduction to the Web & HTTP Protocol
+
+-[Introduction to Web App Security Testing](https://github.com/emanueletroiani/eJPTv2/edit/Introduction-to-Web-App-Security-Testing/README.md)
+
+-[Web Application Architecture & Components
+](https://github.com/emanueletroiani/eJPTv2/blob/Web-Application-Architecture-&-Components/README.md)
+
+-[HTTP/S Protocol Fundamentals](https://github.com/emanueletroiani/eJPTv2/edit/HTTP/S-Protocol-Fundamentals/README.md)
