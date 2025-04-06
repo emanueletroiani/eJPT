@@ -1,5 +1,13 @@
--Introduction to Web Application Security
-
--Web Application Security Testing
-
--Common Web Application Threats & Risks
+- **Cross-Site Scripting (XSS):** Gli aggressori **iniettano** **script dannosi nelle pagine Web** **visualizzate da** altri **utenti**, con conseguente **accesso non autorizzato** ai dati dell'utente, **dirottamento** della **sessione** e **manipolazione** del **browser**
+- **Iniezione SQL:**  Gli aggressori manipolano l'input dell'utente per **iniettare** **codice SQL** dannoso **nel database** dell'applicazione, con conseguente **accesso** non autorizzato ai **dati**, **manipolazione** dei dati o **compromissione** del database.
+- **Falsificazione delle richieste cross-site (CSRF)**: Gli aggressori **ingannano** gli **utenti** **autenticati** **inducendoli** a **eseguire** inconsapevolmente azioni su un'applicazione web, come la
+**modifica** dei **dati** dell'account, **sfruttando** le loro **sessioni** **attive**.
+- **Errori di configurazione della sicurezza:** Server, database o framework applicativi non correttamente configurati possono esporre dati sensibili o fornire punti di accesso agli aggressori.
+- **Esposizione di dati sensibili:** L'incapacità di proteggere adeguatamente i dati sensibili, come le password o le informazioni personali, può portare a violazioni dei dati e a furti di identità.
+- **Attacchi Brute-Force e Credential Stuffing**: Gli aggressori utilizzano strumenti automatizzati per indovinare nomi utente e password, cercando di ottenere un accesso non autorizzato agli account degli utenti
+- **Vulnerabilità nel caricamento dei file**: Meccanismi di caricamento dei file non sicuri possono consentire agli aggressori di caricare file dannosi, portando all'esecuzione di codice remoto o all'accesso non autorizzato al server.
+- **Denial-of-Service (DoS) e Distributed Denial of-Service:**  Gli attacchi DoS e DDoS mirano a sopraffare i server delle applicazioni Web, causando interruzioni del servizio e negando l'accesso agli utenti legittimi
+- **Falsificazione delle richieste sul lato server (SSRF):** Gli aggressori utilizzano l'SSRF per effettuare richieste dal server a risorse interne o a reti esterne, con conseguente potenziale furto di dati o accesso non autorizzato.
+- **Controlli di accesso inadeguati:** Controlli di accesso deboli possono consentire a utenti non autorizzati di accedere a funzionalità riservate o a dati sensibili.
+- **Utilizzo di componenti con vulnerabilità note:**  L'integrazione di componenti di terze parti con difetti di sicurezza noti può introdurre punti deboli nell'applicazione web.
+- **Controllo degli accessi non funzionante**: Controlli di accesso inadeguati possono consentire a utenti non autorizzati di accedere a funzionalità riservate o a dati sensibili
